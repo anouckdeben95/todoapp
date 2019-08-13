@@ -1,0 +1,60 @@
+html {
+    font-family: arial;
+    background-color: #4D5061;
+    margin-left: 10px;
+}
+
+h1{
+    color: #E8C547;
+    margin-left: 10px;
+}
+
+nav{
+    background-color: #E8C547;
+    padding: 20px;
+    float: right;
+}
+nav a{
+    text-decoration: none;
+    color: #4D5061;
+    padding: 10px;
+    text-align: center;
+}
+
+.register, .login{
+    width: 500px;
+	padding: 30px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+}
+.register input, .login input{
+    box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font-size: 16px;
+    height: 45px;
+}
+.register input[type="submit"], .login input[type="submit"]{
+	background-color: #E8C547;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.register input[type="submit"]:hover, .login input[type="submit"]:hover {
+	background:linear-gradient(to bottom, #E8C547 5%, rgb(235, 209, 115) 100%);
+	background-color:#34CACA;
+}
+.register div p, .login div p {
+    color: #5C80BC;
+}
