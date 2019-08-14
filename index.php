@@ -8,7 +8,7 @@
     else{
         $id = $_SESSION['userID'];
 
-        $l = new Lists();
+        $l = new TodoList();
         $results = $l->getLists($id);
     }
 
