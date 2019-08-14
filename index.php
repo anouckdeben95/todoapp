@@ -1,10 +1,18 @@
 <?php
     require_once("bootstrap.php");
+
     $s = Session::check();
     if($s === false){
         header("Location: login.php");
     }
-    $id = $_SESSION['userID'];
+    else{
+        $id = $_SESSION['userID'];
+
+        $l = new Lists();
+        $results = $l->getLists($id);
+    }
+
+    
     
 ?><!DOCTYPE html>
 <html lang="en">
@@ -24,6 +32,28 @@
         <h1>Index</h1>
     </header>
     <main>
+
+        <table>
+        <thead>
+        <tr>
+        <th>Lists</th>
+        <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <?php
+        foreach($results as $row)
+        {
+            echo "<tr>";
+            echo "<td>" . $row['name'] . "</td>";
+            echo "<td><a href='deletedvd.php?id=".$row['id']."'>
+                <img src='images/trashcan_icon_s.png'></a></td>";
+            echo "</tr>";
+        }
+        ?>
+        </tbody>
+        </table>
     </main>
     <footer>
 
