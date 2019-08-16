@@ -41,7 +41,7 @@ nav a{
     font-size: 16px;
     height: 45px;
 }
-.register input[type="submit"], .login input[type="submit"]{
+input.btn, .register input[type="submit"], .login input[type="submit"]{
 	background-color: #E8C547;
 	display: inline-block;
 	cursor: pointer;
@@ -51,7 +51,7 @@ nav a{
 	text-decoration: none;
 	text-transform: uppercase;
 }
-.register input[type="submit"]:hover, .login input[type="submit"]:hover {
+input.brn:hover, .register input[type="submit"]:hover, .login input[type="submit"]:hover{
 	background:linear-gradient(to bottom, #E8C547 5%, rgb(235, 209, 115) 100%);
 	background-color:#34CACA;
 }
