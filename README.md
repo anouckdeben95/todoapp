@@ -3,9 +3,9 @@
 Checked is een app om gemakkelijk taken bij te houden en op te volgen.
 
 ## Benaming
-* Algemeen: kleine letters (enkel classes beginnen met Hoofdletters)
-            eindigen met .php
-            geen gebruik van spaties, underscores of . in de naam
+* Algemeen: kleine letters (enkel classes beginnen met Hoofdletters);
+            eindigen met .php;
+            geen gebruik van spaties, underscores of . in de naam;
 * Classes: *Classname*.class.php
 
 ## Bugs en opmerkingen
