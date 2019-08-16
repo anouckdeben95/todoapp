@@ -22,6 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel = "stylesheet" type = "text/css" href = "css/reset.css"/>
     <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
+    
 
     <title>TodoApp</title>
 
@@ -29,9 +30,10 @@
 <body>
     <header>
         <?php require_once("nav.inc.php"); ?>
-        <h1>Index</h1>
     </header>
     <main>
+
+        <button onClick="window.location.href='addlist.php'">Add list</button>
 
         <table>
         <thead>
@@ -47,7 +49,7 @@
         {
             echo "<tr>";
             echo "<td>" . $row['name'] . "</td>";
-            echo "<td><a href='deletedvd.php?id=".$row['id']."'>
+            echo "<td><a href='deleteList.php?id=". $row['id'] ."' onclick='deleteList()'>
                 <img src='images/trashcan_icon_s.png'></a></td>";
             echo "</tr>";
         }
@@ -60,4 +62,7 @@
     </footer>
 
 </body>
+
+
+
 </html>
