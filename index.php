@@ -22,7 +22,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel = "stylesheet" type = "text/css" href = "css/reset.css"/>
     <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
-    
+    <style>
+        main{
+            max-width: 500px;
+            margin: auto;
+        }
+        input.btn{
+            background-color: #E8C547;
+            display: inline-block;
+            cursor: pointer;
+            color: #FFFFFF;
+            font-size: 14px;
+            padding: 8px 18px;
+            text-decoration: none;
+            text-transform: uppercase;
+            margin: 20px;
+        }
+        input.btn:hover{
+            background:linear-gradient(to bottom, #E8C547 5%, rgb(235, 209, 115) 100%);
+	        background-color:#34CACA;
+        }
+    </style>
 
     <title>TodoApp</title>
 
@@ -32,8 +52,8 @@
         <?php require_once("nav.inc.php"); ?>
     </header>
     <main>
-
-        <button onClick="window.location.href='addlist.php'">Add list</button>
+        
+        <input type="submit" class="btn" value="Add list" onClick="window.location.href='addlist.php'"><br>
 
         <table>
         <thead>
