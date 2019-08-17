@@ -13,3 +13,6 @@ Checked is een app om gemakkelijk taken bij te houden en op te volgen.
 * 
 ### List - verwijderen
 * mogelijkheid om te verwijderen na klikken van de link/trashcan_icon zonder een nieuwe pagina te laden, maar door gebruik van oproepen van een functie (ajax?)
+
+### Task - datum
+* mogelijkheid om datum in format DD-MM-YYYY te weergeven ipv YYYY-MM-DD; DATE_FORMAT of strtotime()
