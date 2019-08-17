@@ -1,5 +1,4 @@
-<?php require_once("bootstrap.php");?>
-<?php
+<?php require_once("bootstrap.php");
 $s = Session::check();
 if($s === false){
     header("Location: login.php");
@@ -21,11 +20,7 @@ else{
 }
 
 
-?>
-
-
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
