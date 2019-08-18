@@ -1,6 +1,5 @@
 <?php
-    //class List not possible, is reserved keyword
-    //https://www.php.net/manual/en/reserved.keywords.php
+
     class Task
     {
         protected $listItemId;
