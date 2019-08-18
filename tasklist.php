@@ -17,8 +17,9 @@
     <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
     <link rel = "stylesheet" type = "text/css" href = "css/tasks.css"/>
     <style>
-    
-
+        .commentbtn{
+            display: none;
+        }
     </style>
 
 
@@ -53,19 +54,16 @@
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $row['duration'] . "</td>";
             echo "<td>" . $row['deadline'] . "</td>";
-            echo "<td><a onclick='openComments()'>
+            echo "<td><a onclick='openComments(". $row['id'] .")'>
             <img src='images/add_icon_s.png'></a></td>";
             echo "</tr>";
 
-            echo "<tr style='display:none;' id='commentbtn'>
-      
-            <td colspan='4' class='comments'>";
+            echo "<tr id='commentbtn". $row['id'] ."' class='commentbtn'><td colspan='4'>";
             ?>
                 <form method="POST" class="comment">
-                    <textarea name="comment_content" class="form-control" placeholder="Enter Comment" rows="5"></textarea>
+                    <textarea name="comment_content" class="form-control" placeholder="Enter Comment" rows="1"></textarea>
                     <input type="submit" name="submit" class="btn" value="Submit" />
                 </form>
-
             <?php
             echo "</td></tr>";
         }
@@ -79,13 +77,25 @@
 
 </body>
 <script type="text/javascript">
-    function openComments() {
-        if (document.getElementById('commentbtn').style.display == "none") {
+    function openComments( rowid) {
+        /**if (document.getElementById('commentbtn').style.display == "none") {
             document.getElementById('commentbtn').style.display = "block";
 
         } else {
             document.getElementById('commentbtn').style.display = "none";
+        }**/
+        var id = "commentbtn".concat(rowid);
+        console.log(id);
+
+        if (document.getElementById(id).classList.contains('commentbtn')) {
+            document.getElementById(id).classList.remove("commentbtn");
+
+        } else {
+            document.getElementById(id).classList.add("commentbtn");
         }
+
+        
+    
     }
 </script>
 </html>
