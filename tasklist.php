@@ -15,34 +15,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel = "stylesheet" type = "text/css" href = "css/reset.css"/>
     <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "css/tasks.css"/>
     <style>
-    main{
-            max-width: 500px;
-            margin: auto;
-        }
-    input.btn{
-            background-color: #E8C547;
-            width: 50%;
-            margin: 20px 25% 20px 25%;
-            display: inline-block;
-            cursor: pointer;
-            color: #FFFFFF;
-            font-size: 14px;
-            padding: 8px 18px;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-    input.btn:hover{
-            background:linear-gradient(to bottom, #E8C547 5%, rgb(235, 209, 115) 100%);
-	        background-color:#34CACA;
-        }
-    .listing{
-            margin: auto;
-    }
-    .listing td{
-        padding: 10px;
-        text-align: center;
-    }
+    
 
     </style>
 
@@ -74,13 +49,25 @@
         foreach($results as $row)
         {
             echo "<tr>";
-            echo "<td>check</td>";
+            echo "<td class='check'>check</td>";
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $row['duration'] . "</td>";
             echo "<td>" . $row['deadline'] . "</td>";
-            echo "<td><a href='deleteList.php?id=". $row['id'] ."'>
-                <img src='images/trashcan_icon_s.png'></a></td>";
+            echo "<td><a onclick='openComments()'>
+            <img src='images/add_icon_s.png'></a></td>";
             echo "</tr>";
+
+            echo "<tr style='display:none;' id='commentbtn'>
+      
+            <td colspan='4' class='comments'>";
+            ?>
+                <form method="POST" class="comment">
+                    <textarea name="comment_content" class="form-control" placeholder="Enter Comment" rows="5"></textarea>
+                    <input type="submit" name="submit" class="btn" value="Submit" />
+                </form>
+
+            <?php
+            echo "</td></tr>";
         }
         ?>
         </tbody>
@@ -91,4 +78,14 @@
     </footer>
 
 </body>
+<script type="text/javascript">
+    function openComments() {
+        if (document.getElementById('commentbtn').style.display == "none") {
+            document.getElementById('commentbtn').style.display = "block";
+
+        } else {
+            document.getElementById('commentbtn').style.display = "none";
+        }
+    }
+</script>
 </html>
