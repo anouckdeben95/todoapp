@@ -1,0 +1,32 @@
+main{
+    max-width: 500px;
+    margin: auto;
+}
+input.btn{
+    background-color: #E8C547;
+    width: 50%;
+    margin: 20px 25% 20px 25%;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 8px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+input.btn:hover{
+    background:linear-gradient(to bottom, #E8C547 5%, rgb(235, 209, 115) 100%);
+    background-color:#34CACA;
+}
+.listing{
+    margin: auto;
+}
+.listing td{
+    padding: 10px;
+    text-align: center;
+}
+.listing td .check{
+    width: 50%;
+}
+/**#commentbtn{display:none;} >> have to click twice to open**/
+
