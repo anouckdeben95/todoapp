@@ -6,6 +6,9 @@
     $t = new Task;   
     $results = $t->getTasks($listItemId);
 
+    $taskid = 1;
+    $c = new Comment;
+    $comments = $c->getComments($taskid);
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -60,10 +63,19 @@
 
             echo "<tr id='commentbtn". $row['id'] ."' class='commentbtn'><td colspan='4'>";
             ?>
+                <ul id="listupdates">
+		            <?php 
+			        foreach($comments as $com) {
+					    echo "<li>". $com['message'] ."</li>";
+			        }
+
+		            ?>
+		        </ul>
                 <form method="POST" class="comment">
-                    <textarea name="comment_content" class="form-control" placeholder="Enter Comment" rows="1"></textarea>
-                    <input type="submit" name="submit" class="btn" value="Submit" />
+                    <textarea id="comment" name="comment_content" class="form-control" placeholder="Enter Comment" rows="1"></textarea>
+                    <input type="submit" id="submit" name="submit" class="btn" value="Submit" />
                 </form>
+                <span id="display_comment"></span>
             <?php
             echo "</td></tr>";
         }
@@ -76,16 +88,11 @@
     </footer>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-    function openComments( rowid) {
-        /**if (document.getElementById('commentbtn').style.display == "none") {
-            document.getElementById('commentbtn').style.display = "block";
+    function openComments(rowid) {
 
-        } else {
-            document.getElementById('commentbtn').style.display = "none";
-        }**/
         var id = "commentbtn".concat(rowid);
-        console.log(id);
 
         if (document.getElementById(id).classList.contains('commentbtn')) {
             document.getElementById(id).classList.remove("commentbtn");
@@ -94,8 +101,7 @@
             document.getElementById(id).classList.add("commentbtn");
         }
 
-        
-    
     }
 </script>
+<script src="js/comment.js"></script>
 </html>
