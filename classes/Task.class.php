@@ -14,8 +14,10 @@
                     ON tl_tasks.list_id = tl_lists.id
                     WHERE tl_lists.id = :taskid
                     ORDER BY 
-                    case when tl_tasks.done = 0 then 0
-                    else 1 end, tl_tasks.deadline ASC";
+                    case 
+                        when tl_tasks.done = 1 then 3
+                        when tl_tasks.deadline = '00000000' then 2
+                        else 1 end, tl_tasks.deadline ASC";
             $statement = $conn->prepare($sql);
             $statement->bindValue(':taskid', $listItemId);
             $statement->execute();
