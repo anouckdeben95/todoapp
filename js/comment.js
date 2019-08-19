@@ -15,7 +15,6 @@ $(document).ready(function(){
           dataType:"json"
         })
         .done(function( result ) {
-            console.log(result.status);
             if( result.status == "success" ){
                 // = "<li>" + text + "</li>"
                 var li = "<li>" + text + "</li>";
