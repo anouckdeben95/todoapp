@@ -20,21 +20,21 @@
             return $result;
         }
 
-        /**public function addTask($taskname, $dur, $dl, $listid, $userid){
+        public function addTask($taskname, $dur, $dl, $userid, $listid){
             $conn = Db::getInstance();
         
-            $sql = "INSERT INTO tl_lists(name, duration, deadline, list_id, user_id, done) 
-            VALUES (:name, :duration, :deadline, :listid, :userid, 0)";
+            $sql = "INSERT INTO tl_tasks(name, duration, deadline, user_id, list_id, done) 
+            VALUES (:tname, :duration, :deadline, :userid, :listid, 0)";
             $statement = $conn->prepare($sql);
-            $statement->bindValue(':name', $name);
+            $statement->bindValue(':tname', $taskname);
             $statement->bindValue(':duration', $dur);
             $statement->bindValue(':deadline', $dl);
-            $statement->bindValue(':listid', $listid);
             $statement->bindValue(':userid', $userid);
+            $statement->bindValue(':listid', $listid);
             $result = $statement->execute();
             return $result;
            
-        }**/
+        }
 
 
 
