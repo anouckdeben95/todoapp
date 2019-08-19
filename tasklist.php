@@ -27,6 +27,9 @@
         .commentbtn{
             display: none;
         }
+        .color{
+            background-color: green;
+        }
     </style>
 
 
@@ -56,8 +59,12 @@
         <?php
         foreach($results as $row)
         {
-            echo "<tr>";
-            echo "<td class='check'><input class='checked' type='checkbox' name='checkbox' id='checkbox'></td>";
+            if ($row['done'] == 1){
+                $k = "color";
+            }
+            else{ $k=""; }
+            echo "<tr class='". $k ."'>";
+            echo "<td class='check'><input class='check' type='checkbox' name='checkbox' id=". $row['id'] ."></td>";
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $row['duration'] . "</td>";
             echo "<td>" . $row['deadline'] . "</td>";
@@ -67,7 +74,7 @@
 
             echo "<tr id='commentbtn". $row['id'] ."' class='commentbtn'><td colspan='4'>";
             ?>
-                <ul id="listupdates">
+                <ul id="listupdates" class="updates">
                     <?php 
                         $taskid = $row['id'];
                         $comments = run($taskid);
@@ -108,8 +115,11 @@
         } else {
             document.getElementById(id).classList.add("commentbtn");
         }
-
+    
     }
+
+
 </script>
 <script src="js/comment.js"></script>
+<script src="js/checked.js"></script>
 </html>
