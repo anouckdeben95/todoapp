@@ -21,13 +21,9 @@ $(document).ready(function(){
                 var li = "<li>" + text + "</li>";
                 console.log(li);
                 // to insert specified content as the last child
-                $log = el.closest('td').find('#listupdates');
-                console.log($log);
                 el.closest('td').find('#listupdates').append(li);
-                //$("#listupdates").append(li);
-                el.closest('td').find('#comment').val("").focus();
-                //animatie
-                //el.closest("#listupdates li").last().slideDown();
+                el.closest('td').find('#comment').val("");
+            
             }
         })
         });
