@@ -11,10 +11,12 @@ $(document).ready(function(){
           data:{ text: text},
           dataType:"json"
         })
-        .done(function( response ) {
-            if( response.status == "success" ){
+        .done(function( result ) {
+            console.log(result.status);
+            if( result.status == "success" ){
+                console.log("done");
             // = "<li>" + text + "</li>"
-                var li = "<li style='display:none;'>" + text + "</li>";
+                var li = "<li>" + text + "</li>";
                 $("#listupdates").append(li);
                 $("#comment").val("").focus();
                 //animatie
