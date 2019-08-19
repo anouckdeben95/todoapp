@@ -20,15 +20,14 @@
             return $result;
         }
 
-        public function addComment($message, $taskid){
+        public function addComment($comment, $taskid){
             $conn = Db::getInstance();
             $sql = "INSERT INTO tl_comments(message, task_id) 
             VALUES (:mess, :taskid)";
-            $statement = $conn->prepare($query);
+            $statement = $conn->prepare($sql);
             $statement->bindValue(':mess', $comment);
             $statement->bindValue(':taskid', $taskid);
             $statement->execute();
-            console.log("succes");
         }
 
 
