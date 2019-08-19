@@ -1,24 +1,33 @@
 $(document).ready(function(){
  
-    $('#submit').on('click', function(e){
+    $('.submit').on('click', function(e){
      e.preventDefault();
-     var text = $("#comment").val();
-
+     var el = $(this);
+     var taskid = e.target.id;
+     var text = $(this).closest('.comment').find('textarea').val();
+     
+     //var taskid = $(".submit").attr('id');
+     console.log(taskid);
         $.ajax({
           url:"ajax/addcomment.php",
           method:"POST",
-          data:{ text: text},
+          data:{ text: text, taskid: taskid},
           dataType:"json"
         })
         .done(function( result ) {
+            console.log(result.status);
             if( result.status == "success" ){
-                console.log("done");
-            // = "<li>" + text + "</li>"
+                // = "<li>" + text + "</li>"
                 var li = "<li>" + text + "</li>";
-                $("#listupdates").append(li);
-                $("#comment").val("").focus();
+                console.log(li);
+                // to insert specified content as the last child
+                $log = el.closest('td').find('#listupdates');
+                console.log($log);
+                el.closest('td').find('#listupdates').append(li);
+                //$("#listupdates").append(li);
+                el.closest('td').find('#comment').val("").focus();
                 //animatie
-                $("#listupdates li").last().slideDown();
+                //el.closest("#listupdates li").last().slideDown();
             }
         })
         });
