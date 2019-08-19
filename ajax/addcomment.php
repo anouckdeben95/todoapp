@@ -7,7 +7,7 @@ if( !empty($_POST)) {
     $message = htmlspecialchars($_POST['text']); 
     
     //get the taskid
-    $taskid = 1;
+    $taskid = $_POST['taskid'];
     
     try {
         $comment = new Comment;
