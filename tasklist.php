@@ -44,7 +44,7 @@
         <table class="listing">
         <thead>
         <tr>
-        <th>Check</th>
+        <th>Done</th>
         <th>Tasks</th>
         <th>Duration</th>
         <th class='dl'>Deadline</th>
@@ -57,7 +57,7 @@
         foreach($results as $row)
         {
             echo "<tr>";
-            echo "<td class='check'>check</td>";
+            echo "<td class='check'><input class='checked' type='checkbox' name='checkbox' id='checkbox'></td>";
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $row['duration'] . "</td>";
             echo "<td>" . $row['deadline'] . "</td>";
