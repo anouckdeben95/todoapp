@@ -7,7 +7,7 @@
 
         public function getComments($taskid){
             $conn = Db::getInstance();
-            $sql = "SELECT tl_comments.id, tl_comments.message 
+            $sql = "SELECT tl_comments.message 
                     FROM tl_comments 
                     INNER JOIN tl_tasks 
                     ON tl_comments.task_id = tl_tasks.id
@@ -20,20 +20,18 @@
             return $result;
         }
 
-        
-
-        public function addComment($comment, $taskid){
+        public function addComment($message, $taskid){
             $conn = Db::getInstance();
-        
             $sql = "INSERT INTO tl_comments(message, task_id) 
             VALUES (:mess, :taskid)";
-            $statement = $conn->prepare($sql);
+            $statement = $conn->prepare($query);
             $statement->bindValue(':mess', $comment);
             $statement->bindValue(':taskid', $taskid);
-            $result = $statement->execute();
-            return $result;
-           
+            $statement->execute();
+            console.log("succes");
         }
+
+
 
 
 
