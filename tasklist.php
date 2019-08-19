@@ -39,7 +39,7 @@
         <h1>Tasks</h1>
     </header>
     <main>
-        <input type="submit" class="btn" value="Add task" onClick="window.location.href='addlist.php'"><br>
+        <input type='submit' class='btn' value='Add task' onClick="window.location.href='addTask.php?id=<?php echo $listItemId; ?>'"><br>
 
         <table class="listing">
         <thead>
