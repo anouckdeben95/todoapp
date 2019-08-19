@@ -86,7 +86,7 @@
         {
             echo "<tr>";
             echo "<td class='listname'><a href='tasklist.php?id=". $row['id'] ."'>" . $row['name'] . "</a></td>";
-            echo "<td><a href='deleteList.php?id=". $row['id'] ."' onclick='deleteList()'>
+            echo "<td><a href='deleteList.php?id=". $row['id'] ."'>
                 <img src='images/trashcan_icon_s.png'></a></td>";
             echo "</tr>";
         }
