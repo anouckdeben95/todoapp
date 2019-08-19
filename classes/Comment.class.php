@@ -7,7 +7,7 @@
 
         public function getComments($taskid){
             $conn = Db::getInstance();
-            $sql = "SELECT tl_comments.message 
+            $sql = "SELECT tl_comments.task_id, tl_comments.message 
                     FROM tl_comments 
                     INNER JOIN tl_tasks 
                     ON tl_comments.task_id = tl_tasks.id
