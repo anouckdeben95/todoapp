@@ -79,8 +79,9 @@
 		            ?>
 		        </ul>
                 <form method="POST" class="comment">
+                    <?php //echo "<p style='display: none;' id='aid". $row['id'] ."'>".$taskid."</p>" ?>
                     <textarea id="comment" name="comment_content" class="form-control" placeholder="Enter Comment" rows="1"></textarea>
-                    <input type="submit" id="submit" name="submit" class="btn" value="Submit" />
+                    <?php echo "<input type='submit' id=". $row['id'] ." name='submit' class='btn submit' value='Submit' />" ?>
                 </form>
                 <span id="display_comment"></span>
             <?php
