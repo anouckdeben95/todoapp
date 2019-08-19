@@ -61,10 +61,11 @@
         {
             if ($row['done'] == 1){
                 $k = "color";
+                $check = 'checked="checked"';
             }
-            else{ $k=""; }
+            else{ $k=""; $check=""; }
             echo "<tr class='". $k ."'>";
-            echo "<td class='check'><input class='check' type='checkbox' name='checkbox' id=". $row['id'] ."></td>";
+            echo "<td><input type='checkbox'". $check ."class='check' name='checkbox' id=". $row['id'] ."></td>";
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $row['duration'] . "</td>";
             echo "<td>" . $row['deadline'] . "</td>";
@@ -117,6 +118,8 @@
         }
     
     }
+    
+
 
 
 </script>
