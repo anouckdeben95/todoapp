@@ -7,9 +7,11 @@
     $results = $t->getTasks($listItemId);
 
 
-    $taskid = 1;
+    function run($taskid){
     $c = new Comment;
     $comments = $c->getComments($taskid);
+    return $comments;
+    }
 
 
 ?><!DOCTYPE html>
@@ -66,10 +68,13 @@
             echo "<tr id='commentbtn". $row['id'] ."' class='commentbtn'><td colspan='4'>";
             ?>
                 <ul id="listupdates">
-		            <?php 
-			        foreach($comments as $com) {
-					    echo "<li>". $com['message'] ."</li>";
-			        }
+                    <?php 
+                        $taskid = $row['id'];
+                        $comments = run($taskid);
+                        foreach($comments as $com) {
+                            echo "<li>". $com['message'] ."</li>";
+                        }
+                        
 
 		            ?>
 		        </ul>
