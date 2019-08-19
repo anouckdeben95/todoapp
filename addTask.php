@@ -13,12 +13,16 @@ else{
         $listid = $_GET['id'];
         $task = new Task();
     
-        if ( $task->addTask($taskname, $dur, $dl, $userid, $listid)) {
-            header("Location: tasklist.php?id=".$listid);
-        } else {
-            $feedback = "Can't add this list at the moment. Try again later!";
+        if(!empty($_POST['taskname']) && !empty($_POST['duration'])){
+                if ( $task->addTask($taskname, $dur, $dl, $userid, $listid)) {
+                    header("Location: tasklist.php?id=".$listid);
+                } else {
+                    $feedback = "Can't add this list at the moment. Try again later!";
+                }
         }
-     
+        else {
+            $feedback = "The fields, task and/or duration, cannot be empty.";
+        }
     }
 }
 
