@@ -1,0 +1,38 @@
+.addtask, .addlist, .white, .whitelist{
+    width: 500px;
+	padding: 30px;
+	background: #F8FFF4;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+}
+.addtask input, .addlist input{
+    box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font-size: 16px;
+    height: 45px;
+}
+input.btn, .addtask input[type="submit"], .addlist input[type="submit"]{
+	background-color: #E8C547;
+	display: inline-block;
+	cursor: pointer;
+	color: #4D5061;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+input.btn:hover, .addtask input[type="submit"]:hover, .addlist input[type="submit"]:hover{
+	background:linear-gradient(to bottom, #E8C547 5%, rgb(235, 209, 115) 100%);
+	background-color:#34CACA;
+}
+.addtask div p, .addlist div p{
+    color: #5C80BC;
+}
+
