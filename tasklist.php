@@ -12,6 +12,9 @@
     $comments = $c->getComments($taskid);
     return $comments;
     }
+    
+   
+
 
 
 ?><!DOCTYPE html>
@@ -24,6 +27,7 @@
     <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
     <link rel = "stylesheet" type = "text/css" href = "css/tasks.css"/>
     <link rel = "stylesheet" type = "text/css" href = "css/add.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "css/popup.css"/>
     <style>
         .commentbtn{
             display: none;
@@ -77,7 +81,8 @@
             echo "<td><input type='checkbox'". $check ."class='check' name='checkbox' id=". $row['id'] ."></td>";
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $time . "</td>";
-            echo "<td>" . $showdl . "<p style='font-weight:bold'>". $days ."</p></td>";
+            echo "<td>" . $showdl . "<p style='font-weight:bold'>". $days ."</p><br>
+            <a onclick='openPopup(". $row['id'] .")'><img src='images/edit_icon_s.png'></a></td>";
             echo "<td><a onclick='openComments(". $row['id'] .")'>
             <img src='images/add_icon_s.png'></a></td>";
             echo "</tr>";
@@ -103,6 +108,33 @@
                 <span id="display_comment"></span>
             <?php
             echo "</td></tr>";
+
+            ?>
+            <!-- popup -->
+                <div id="modal<?php echo $row['id'] ?>" class="modal">
+                    <div class="popup">
+                        <?php echo "<span onclick='closing(". $row['id'] .")' class='close' >&times;</span>"; ?>
+                        <form action="" method="post" class="update">
+                        <?php if(isset($feedback)){
+                            echo "<div>
+                            <p>". $feedback ."</p>
+                            </div>";
+                        } ?>
+                        
+                            <p>Task:</p><br>
+                            <p><?php echo $row['name'] ?></p><br> 
+                            <label>New Deadline<label><br>
+                            <div class="up">
+                                <input type="date" id="newdeadline" name="newdeadline"><br>
+
+                                <input class="update_task" type="submit" value="Update" id="<?php echo $row['id'] ?>">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+        <?php    
+
         }
         ?>
         </tbody>
@@ -128,11 +160,32 @@
         }
     
     }
-    
 
+    function openPopup(rowid) {
+        var id = "modal".concat(rowid);
+        
+        console.log(id);
+        // Get the modal
+        var modal = document.getElementById(id);
+        modal.style.display = "block";
+    }
+
+    function closing(rowid) {
+        var id = "modal".concat(rowid);
+        console.log(id);
+        var modal = document.getElementById(id);
+        modal.style.display = "none";
+    }
+   
+
+
+
+
+    
 
 
 </script>
 <script src="js/comment.js"></script>
 <script src="js/checked.js"></script>
+<script src="js/update.js"></script>
 </html>
