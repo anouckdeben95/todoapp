@@ -35,6 +35,12 @@
         .color{
             background-color: #50C878;
         }
+        table{
+            border-collapse: collapse;
+        }
+        .listing tbody tr:nth-child(odd){
+            border-bottom: 5px solid #4D5061;
+        }
     </style>
 
 
@@ -107,7 +113,8 @@
                 </form>
                 <span id="display_comment"></span>
             <?php
-            echo "</td></tr>";
+            echo "</td>
+            </tr>";
 
             ?>
             <!-- popup -->
@@ -121,7 +128,7 @@
                             </div>";
                         } ?>
                         
-                            <p>Task:</p><br>
+                            <h1>Task:</h1><br>
                             <p><?php echo $row['name'] ?></p><br> 
                             <label>New Deadline<label><br>
                             <div class="up">
