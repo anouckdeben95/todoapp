@@ -14,13 +14,17 @@ else{
         $task = new Task();
     
         if(!empty($_POST['taskname']) && !empty($_POST['duration'])){
+            if($_POST['duration'] < 361){
                 if ( $task->addTask($taskname, $dur, $dl, $userid, $listid)) {
                     header("Location: tasklist.php?id=".$listid);
                 } else {
                     $feedback = "Can't add this list at the moment. Try again later!";
                 }
-        }
-        else {
+            } else {
+                $feedback = "The duration doesn't seem very likely.";
+            }
+
+        } else {
             $feedback = "The fields, task and/or duration, cannot be empty.";
         }
     }
@@ -35,6 +39,7 @@ else{
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel = "stylesheet" type = "text/css" href = "css/reset.css"/>
         <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "css/tasks.css"/>
     
 
         <title>TodoApp</title>
@@ -46,7 +51,7 @@ else{
     </header>
     <main>
 
-    <form action="" method="post" class="add_form">
+    <form action="" method="post" class="addtask">
         <h2>New task</h2>
         <?php if(isset($feedback)): ?>
             <div>
