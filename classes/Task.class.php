@@ -86,4 +86,18 @@
             }
         }
 
+        public static function timeNeeded($dur){
+            if ($dur <= 30){
+                $pressure = "<p style='color:#3895D3'>".$dur."</p>";
+            } else{
+                if ($dur >= 60){
+                    $pressure = "<p style='color:#BF0000'>".$dur."</p>";
+                } else{
+                    $pressure = "<p style='color:#E8C547'>".$dur."</p>";
+                }
+
+            }
+            return $pressure;
+        }
+
     }
