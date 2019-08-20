@@ -24,7 +24,7 @@ nav a{
 .register, .login, .addtask{
     width: 500px;
 	padding: 30px;
-	background: #FFFFFF;
+	background: #F8FFF4;
 	margin: 50px auto;
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
 }
@@ -45,7 +45,7 @@ input.btn, .register input[type="submit"], .login input[type="submit"], .addtask
 	background-color: #E8C547;
 	display: inline-block;
 	cursor: pointer;
-	color: #FFFFFF;
+	color: #4D5061;
 	font-size: 14px;
 	padding: 8px 18px;
 	text-decoration: none;
@@ -53,7 +53,7 @@ input.btn, .register input[type="submit"], .login input[type="submit"], .addtask
 }
 input.btn:hover, .register input[type="submit"]:hover, .login input[type="submit"]:hover, .addtask input[type="submit"]:hover{
 	background:linear-gradient(to bottom, #E8C547 5%, rgb(235, 209, 115) 100%);
-	background-color:#34CACA;
+	background-color:#E8c547;
 }
 .register div p, .login div p, .addtask div p{
     color: #5C80BC;
