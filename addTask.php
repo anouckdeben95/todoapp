@@ -39,7 +39,7 @@ else{
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel = "stylesheet" type = "text/css" href = "css/reset.css"/>
         <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
-        <link rel = "stylesheet" type = "text/css" href = "css/tasks.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "css/add.css"/>
     
 
         <title>TodoApp</title>
