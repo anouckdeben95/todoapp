@@ -52,7 +52,7 @@ else{
     <main>
 
     <form action="" method="post" class="addtask">
-        <h2>New task</h2>
+        <h1>New task</h1>
         <?php if(isset($feedback)): ?>
             <div>
                 <p><?php echo $feedback; ?></p>
