@@ -53,6 +53,18 @@
             return $result;         
         }
 
+        public function updateDeadline($id, $newdl){
+            $conn = Db::getInstance();
+            $sql = "UPDATE tl_tasks
+                    SET deadline = :ndl
+                    WHERE tl_tasks.id = :id";
+            $statement = $conn->prepare($sql);
+            $statement->bindValue(':ndl', $newdl);
+            $statement->bindValue(':id', $id);
+            $result = $statement->execute();
+            return $result;  
+        }
+
         public static function timeLeft($deadline){
             date_default_timezone_set('Europe/Brussels');   
             $today = strtotime(date("Ymd")); //current date
