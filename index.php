@@ -22,6 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel = "stylesheet" type = "text/css" href = "css/reset.css"/>
     <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "css/add.css"/>
     <style>
         main{
             max-width: 500px;
@@ -33,7 +34,7 @@
             margin: 20px 25% 20px 25%;
             display: inline-block;
             cursor: pointer;
-            color: #FFFFFF;
+            color: #4D5061;
             font-size: 14px;
             padding: 8px 18px;
             text-decoration: none;
@@ -69,7 +70,7 @@
         <h1>Todo App</h1>
     </header>
     <main>
-        
+        <div class="whitelist">
         <input type="submit" class="btn" value="Add list" onClick="window.location.href='addlist.php'"><br>
 
         <table class="listing">
@@ -93,6 +94,7 @@
         ?>
         </tbody>
         </table>
+    </div>
     </main>
     <footer>
 
