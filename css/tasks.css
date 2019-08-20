@@ -25,10 +25,8 @@ input.btn:hover{
     padding: 10px;
     text-align: center;
 }
-table, th, td {
-    }
+
 table{
     overflow-x: auto;
 }
-/**#commentbtn{display:none;} >> have to click twice to open**/
 
