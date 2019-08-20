@@ -41,7 +41,7 @@ else{
     <main>
 
     <form action="" method="post" class="addlist">
-        <h2>New list</h2>
+        <h1>New list</h1>
         <?php if(isset($feedback)): ?>
             <div>
                 <p><?php echo $feedback; ?></p>
