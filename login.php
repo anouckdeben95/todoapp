@@ -2,7 +2,7 @@
     require_once("bootstrap.php");
 
 if(!empty($_POST)){
-    // mysql_real_escape_string() against MySQL Injection
+    //htmlspecialchars against MySQL Injection
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
 
