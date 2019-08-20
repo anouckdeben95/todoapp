@@ -53,4 +53,37 @@
             return $result;         
         }
 
+        public static function timeLeft($deadline){
+            date_default_timezone_set('Europe/Brussels');   
+            $today = strtotime(date("Ymd")); //current date
+            $dl = strtotime($deadline);
+            if($deadline != '0000-00-00'){
+                $timeleft = $today-$dl;
+                $daysleft = round((($timeleft/24)/60)/60); 
+                if ($daysleft < 0){
+                    $d = abs($daysleft);
+                    if($daysleft == 1){
+                        $days = $d ." day left!";
+                    } else{
+                        $days = $d ." days left!";
+                    }
+                } else {
+                    if ($daysleft == 0){
+                        $days = "TODAY!";
+                    } else{
+                        if($daysleft == 1){
+                            $days = $daysleft ." day too late!";
+                        } else{
+                            $days = $daysleft ." days too late!";
+                        }
+                    }
+                }
+                return $days;
+                
+            } else {
+                $days = "";
+                return $days;
+            }
+        }
+
     }
