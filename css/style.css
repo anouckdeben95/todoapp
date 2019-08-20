@@ -21,14 +21,14 @@ nav a{
     text-align: center;
 }
 
-.register, .login{
+.register, .login, .addtask{
     width: 500px;
 	padding: 30px;
 	background: #FFFFFF;
 	margin: 50px auto;
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
 }
-.register input, .login input{
+.register input, .login input, .addtask input{
     box-sizing: border-box;
     outline: none;
     display: block;
@@ -41,7 +41,7 @@ nav a{
     font-size: 16px;
     height: 45px;
 }
-input.btn, .register input[type="submit"], .login input[type="submit"]{
+input.btn, .register input[type="submit"], .login input[type="submit"], .addtask input[type="submit"]{
 	background-color: #E8C547;
 	display: inline-block;
 	cursor: pointer;
@@ -51,11 +51,11 @@ input.btn, .register input[type="submit"], .login input[type="submit"]{
 	text-decoration: none;
 	text-transform: uppercase;
 }
-input.btn:hover, .register input[type="submit"]:hover, .login input[type="submit"]:hover{
+input.btn:hover, .register input[type="submit"]:hover, .login input[type="submit"]:hover, .addtask input[type="submit"]:hover{
 	background:linear-gradient(to bottom, #E8C547 5%, rgb(235, 209, 115) 100%);
 	background-color:#34CACA;
 }
-.register div p, .login div p {
+.register div p, .login div p, .addtask div p{
     color: #5C80BC;
 }
 
