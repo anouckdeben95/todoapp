@@ -49,7 +49,7 @@
         <tr>
         <th>Done</th>
         <th>Tasks</th>
-        <th>Duration</th>
+        <th>Duration (min)</th>
         <th class='dl'>Deadline</th>
         <th></th>
         </tr>
@@ -60,6 +60,7 @@
         foreach($results as $row)
         {
             $days = Task::timeLeft($row['deadline']);
+            $time = Task::timeNeeded($row['duration']);
             if ($row['done'] == 1){
                 $k = "color";
                 $check = 'checked="checked"';
@@ -73,7 +74,7 @@
             echo "<tr class='". $k ."'>";
             echo "<td><input type='checkbox'". $check ."class='check' name='checkbox' id=". $row['id'] ."></td>";
             echo "<td>" . $row['name'] . "</td>";
-            echo "<td>" . $row['duration'] . "</td>";
+            echo "<td>" . $time . "</td>";
             echo "<td>" . $showdl . "<p style='font-weight:bold'>". $days ."</p></td>";
             echo "<td><a onclick='openComments(". $row['id'] .")'>
             <img src='images/add_icon_s.png'></a></td>";
