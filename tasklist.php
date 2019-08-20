@@ -44,7 +44,7 @@
     <main>
         <input type='submit' class='btn' value='Add task' onClick="window.location.href='addTask.php?id=<?php echo $listItemId; ?>'"><br>
 
-        <table class="listing">
+        <table class="listing" cellspacing="0" cellpadding="0">
         <thead>
         <tr>
         <th>Done</th>
@@ -59,16 +59,22 @@
         <?php
         foreach($results as $row)
         {
+            $days = Task::timeLeft($row['deadline']);
             if ($row['done'] == 1){
                 $k = "color";
                 $check = 'checked="checked"';
             }
             else{ $k=""; $check=""; }
+            if ($row['deadline'] == '0000-00-00'){
+                $showdl = "";
+            } else {
+                $showdl = $row['deadline'];
+            }
             echo "<tr class='". $k ."'>";
             echo "<td><input type='checkbox'". $check ."class='check' name='checkbox' id=". $row['id'] ."></td>";
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $row['duration'] . "</td>";
-            echo "<td>" . $row['deadline'] . "</td>";
+            echo "<td>" . $showdl . "<p style='font-weight:bold'>". $days ."</p></td>";
             echo "<td><a onclick='openComments(". $row['id'] .")'>
             <img src='images/add_icon_s.png'></a></td>";
             echo "</tr>";
