@@ -11,7 +11,7 @@ $('.check').on('change',function(e) {
             })
             .done(function( result ){
                 if( result.status == "success" ){
-                    el.closest('tr').css("background-color","green");
+                    el.closest('tr').css("background-color","rgb(80,200,120)");
                     var par = el.closest('tbody');
                     var comment = el.closest('tr').next('tr');
                     par.append(el.closest('tr'));
