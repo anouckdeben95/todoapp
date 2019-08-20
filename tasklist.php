@@ -23,12 +23,13 @@
     <link rel = "stylesheet" type = "text/css" href = "css/reset.css"/>
     <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
     <link rel = "stylesheet" type = "text/css" href = "css/tasks.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "css/add.css"/>
     <style>
         .commentbtn{
             display: none;
         }
         .color{
-            background-color: green;
+            background-color: #50C878;
         }
     </style>
 
@@ -42,6 +43,7 @@
         <h1>Tasks</h1>
     </header>
     <main>
+        <div class="white">
         <input type='submit' class='btn' value='Add task' onClick="window.location.href='addTask.php?id=<?php echo $listItemId; ?>'"><br>
 
         <table class="listing" cellspacing="0" cellpadding="0">
@@ -105,6 +107,7 @@
         ?>
         </tbody>
         </table>
+    </div>
     </main>
     <footer>
 
