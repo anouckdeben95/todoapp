@@ -35,6 +35,16 @@
            
         }
 
+        public static function listCount(){
+            $conn = Db::getInstance();
+            $sql = "SELECT COUNT(*) 
+                    FROM tl_lists 
+                    WHERE tl_lists.active = 1";
+            $statement = $conn->prepare($sql);
+            $statement->execute();
+            $result = $statement->fetchAll();
 
+            return $result;
+        }    
 
     }
