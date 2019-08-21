@@ -1,21 +1,21 @@
 <?php
     require_once("bootstrap.php");
 
-    $listItemId = $_GET['id'];
+    $s = Session::check();
+    if($s === false){
+        header("Location: login.php");
+    } else {
+        $listItemId = $_GET['id'];
 
-    $t = new Task;   
-    $results = $t->getTasks($listItemId);
-
+        $t = new Task;   
+        $results = $t->getTasks($listItemId);
+    }
 
     function run($taskid){
-    $c = new Comment;
-    $comments = $c->getComments($taskid);
-    return $comments;
+        $c = new Comment;
+        $comments = $c->getComments($taskid);
+        return $comments;
     }
-    
-   
-
-
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -58,13 +58,14 @@
             } else {
                 require_once("nav.inc.php");
             }
+
          ?>
         <h1>Tasks</h1>
     </header>
     <main>
         <div class="white">
         <input type='submit' class='btn' value='Add task' onClick="window.location.href='addTask.php?id=<?php echo $listItemId; ?>'"><br>
-        <input type='submit' class='sort' value='Sort on workhours' onClick=""><br>
+        <input type='submit' name='sort' class='sort' value='Sort on workhours' id="<?php echo $listItemId; ?>"><br>
 
         <table class="listing" cellspacing="0" cellpadding="0">
         <thead>
@@ -205,4 +206,5 @@
 <script src="js/comment.js"></script>
 <script src="js/checked.js"></script>
 <script src="js/update.js"></script>
+<script src="js/sort.js"></script>
 </html>
