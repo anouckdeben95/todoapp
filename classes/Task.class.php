@@ -112,4 +112,24 @@
             return $pressure;
         }
 
+        public function checkDouble($tname, $listid){
+            $conn = Db::getInstance();
+            $sql = "SELECT * 
+                    FROM tl_tasks
+                    WHERE tl_tasks.name = :tname
+                    AND tl_tasks.list_id = :listid";
+            $statement = $conn->prepare($sql);
+            $statement->bindValue(':tname', $tname);
+            $statement->bindValue(':listid', $listid);
+            $result = $statement->execute();
+            if ($statement->rowCount() > 0){
+                $r = false;
+                return $r;
+            } else {
+                $r = true;
+                return $r;
+            }
+            
+        }
+
     }
