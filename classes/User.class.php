@@ -206,5 +206,15 @@
             return $result;
         }
 
-        
+        public static function userCount(){
+            $conn = Db::getInstance();
+            $sql = "SELECT COUNT(*) 
+                    FROM tl_users 
+                    WHERE tl_users.active = 1";
+            $statement = $conn->prepare($sql);
+            $statement->execute();
+            $result = $statement->fetchAll();
+
+            return $result;
+        }        
     }
