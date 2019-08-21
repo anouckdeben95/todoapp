@@ -36,7 +36,16 @@ else{
     </head>
 	<body>
     <header>
-        <?php require_once("nav.inc.php"); ?>
+        <?php 
+            $id = $_SESSION['userID'];
+            $a = new Admin();
+            $isAdmin = $a->checkAdmin($id);
+            if ($isAdmin){
+                require_once("nav2.inc.php");
+            } else {
+                require_once("nav.inc.php");
+            }
+         ?>
     </header>
     <main>
 
