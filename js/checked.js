@@ -19,5 +19,22 @@ $('.check').on('change',function(e) {
                 }
             });
 
-            }
+        } else {
+            $.ajax({
+                type: "POST",
+                url: 'ajax/tasktodo.php',
+                data: {cbid: cbid},
+                dataType:"json"
+            })
+            .done(function( result ){
+                if( result.status == "success" ){
+                    el.closest('tr').css("background-color","transparent");
+                    var par = el.closest('tbody');
+                    var comment = el.closest('tr').next('tr');
+                    par.prepend(comment);
+                    par.prepend(el.closest('tr'));
+                    
+                }
+            });
+        }
       });
