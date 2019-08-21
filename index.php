@@ -69,7 +69,7 @@
             $a = new Admin();
             $isAdmin = $a->checkAdmin($id);
             if ($isAdmin){
-                require_once("nav2.inc.php");
+                require_once("navA.inc.php");
             } else {
                 require_once("nav.inc.php");
             }
@@ -78,7 +78,7 @@
     </header>
     <main>
         <div class="whitelist">
-        <input type="submit" class="btn" value="Add list" onClick="window.location.href='addlist.php'"><br>
+        <input type="submit" class="btn" value="Add list" onClick="location.href='addList.php'"><br>
 
         <table class="listing">
         <thead>
