@@ -13,8 +13,11 @@ $('.check').on('change',function(e) {
                 if( result.status == "success" ){
                     el.closest('tr').css("background-color","rgb(80,200,120)");
                     var par = el.closest('tbody');
-                    var comment = el.closest('tr').next('tr');
+                    var pic = el.closest('tr').next('tr');
+                    pic.closest('tr').css("background-color","rgb(80,200,120)");
+                    var comment = pic.next('tr');
                     par.append(el.closest('tr'));
+                    par.append(pic);
                     par.append(comment);
                 }
             });
@@ -30,8 +33,11 @@ $('.check').on('change',function(e) {
                 if( result.status == "success" ){
                     el.closest('tr').css("background-color","transparent");
                     var par = el.closest('tbody');
-                    var comment = el.closest('tr').next('tr');
+                    var pic = el.closest('tr').next('tr');
+                    pic.closest('tr').css("background-color","transparent");
+                    var comment = pic.next('tr');
                     par.prepend(comment);
+                    par.prepend(pic);
                     par.prepend(el.closest('tr'));
                     
                 }
