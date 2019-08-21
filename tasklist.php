@@ -65,7 +65,7 @@
     <main>
         <div class="white">
         <input type='submit' class='btn' value='Add task' onClick="window.location.href='addTask.php?id=<?php echo $listItemId; ?>'"><br>
-        <input type='submit' name='sort' class='sort' value='Sort on workhours' id="<?php echo $listItemId; ?>"><br>
+        <!--<input type='submit' name='sort' class='sort' value='Sort on workhours' id="<?php echo $listItemId; ?>"><br>-->
 
         <table class="listing" cellspacing="0" cellpadding="0">
         <thead>
@@ -99,7 +99,7 @@
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $time . "</td>";
             echo "<td>" . $showdl . "<p style='font-weight:bold'>". $days ."</p><br>
-            <a onclick='openPopup(". $row['id'] .")'><img src='images/edit_icon_s.png'></a></td>";
+            <a class='pen' onclick='openPopup(". $row['id'] .")'><img src='images/edit_icon_s.png'></a></td>";
             echo "<td><a onclick='openComments(". $row['id'] .")'>
             <img src='images/add_icon_s.png'></a></td>";
             echo "</tr>";
@@ -118,7 +118,6 @@
 		            ?>
 		        </ul>
                 <form method="POST" class="comment">
-                    <?php //echo "<p style='display: none;' id='aid". $row['id'] ."'>".$taskid."</p>" ?>
                     <textarea id="comment" name="comment_content" class="form-control" placeholder="Enter Comment" rows="1"></textarea>
                     <?php echo "<input type='submit' id=". $row['id'] ." name='submit' class='btn submit' value='Submit' />" ?>
                 </form>
@@ -206,5 +205,4 @@
 <script src="js/comment.js"></script>
 <script src="js/checked.js"></script>
 <script src="js/update.js"></script>
-<script src="js/sort.js"></script>
 </html>
