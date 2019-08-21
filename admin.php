@@ -11,8 +11,9 @@
         $results = $u->getUsers();
     }
 
-    
-    
+    $curUsers = User::userCount();
+    $curLists = ToDoList::listCount();
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +23,16 @@
     <link rel = "stylesheet" type = "text/css" href = "css/reset.css"/>
     <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
     <link rel = "stylesheet" type = "text/css" href = "css/add.css"/>
+    <style>
+        span{
+           margin-left: 20px;
+        }
+        p{
+            display: inline;
+            font-weight: bold;
+        }
+
+    </style>
 
     <title>TodoApp - admin</title>
 
@@ -68,7 +79,11 @@
         ?>
         </tbody>
         </table>
-
+        <h1>Stats</h1>
+        <p>Current users:</p>
+        <span><?php echo $curUsers[0][0];?></span><br>
+        <p>Total lists:</p>
+        <span><?php echo $curLists[0][0]; ?></span><br>
         </div>
     </main>
     <footer>
