@@ -53,6 +53,17 @@
             return $result;         
         }
 
+        public function todo($id){
+            $conn = Db::getInstance();
+            $sql = "UPDATE tl_tasks
+                    SET done = 0
+                    WHERE tl_tasks.id = :id";
+            $statement = $conn->prepare($sql);
+            $statement->bindValue(':id', $id);
+            $result = $statement->execute();
+            return $result;         
+        }
+
         public function updateDeadline($id, $newdl){
             $conn = Db::getInstance();
             $sql = "UPDATE tl_tasks
