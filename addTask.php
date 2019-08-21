@@ -15,10 +15,14 @@ else{
     
         if(!empty($_POST['taskname']) && !empty($_POST['duration'])){
             if($_POST['duration'] < 361){
-                if ( $task->addTask($taskname, $dur, $dl, $userid, $listid)) {
-                    header("Location: tasklist.php?id=".$listid);
+                if( $task->checkDouble($taskname, $listid)){
+                    if ( $task->addTask($taskname, $dur, $dl, $userid, $listid)) {
+                        header("Location: tasklist.php?id=".$listid);
+                    } else {
+                        $feedback = "Can't add this list at the moment. Try again later!";
+                    }
                 } else {
-                    $feedback = "Can't add this list at the moment. Try again later!";
+                    $feedback = "You already have this task in your list.";
                 }
             } else {
                 $feedback = "The duration doesn't seem very likely.";
