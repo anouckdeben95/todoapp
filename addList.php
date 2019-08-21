@@ -41,7 +41,7 @@ else{
             $a = new Admin();
             $isAdmin = $a->checkAdmin($id);
             if ($isAdmin){
-                require_once("nav2.inc.php");
+                require_once("navA.inc.php");
             } else {
                 require_once("nav.inc.php");
             }
