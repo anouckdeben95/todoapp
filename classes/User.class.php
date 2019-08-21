@@ -194,5 +194,17 @@
             }
         }
 
+        public function getUsers(){
+            $conn = Db::getInstance();
+            $sql = "SELECT * 
+                    FROM tl_users 
+                    WHERE tl_users.active = 1";
+            $statement = $conn->prepare($sql);
+            $statement->execute();
+            $result = $statement->fetchAll();
+
+            return $result;
+        }
+
         
     }
